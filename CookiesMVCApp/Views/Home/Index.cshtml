@@ -1,0 +1,31 @@
+﻿@model string
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+@if (!string.IsNullOrWhiteSpace(Model))
+{
+    @:<div>Welcome Back <strong>@Model</strong>, You can not take this survey twice. Thank you. </div>
+    @Html.ActionLink("Forget Me", "RemoveCookie")
+}
+else
+{
+    @:
+    <form class="form" asp-action="Index">
+        <div class="form-group">
+            <label>Please enter your email to take the survey!</label>
+            @Html.TextBox("Email")
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary" value="Take Survey" />
+        </div>
+    </form>
+}
+
+

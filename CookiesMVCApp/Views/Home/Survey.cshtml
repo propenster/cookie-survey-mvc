@@ -1,0 +1,16 @@
+﻿@model string
+
+@{
+    ViewData["Title"] = "Survey Page";
+}
+
+@if (!string.IsNullOrEmpty(Model))
+{
+    <p class="alert alert-info">You have already taken this survey. Thank you.</p>
+}
+else
+{ <p>Please fill the survey below....</p>
+
+
+}
+
